@@ -6,41 +6,25 @@ const doctorSchema = new mongoose.Schema({
         required: true
     },
 
-    diagonsedWith :{
-        type: String,
+    salary :{
+        type: Number,
         required: true
     },
 
-    address :{
-        type: String,
-        required: true
-    },
-
-
-    age :{
+    qualification :{
         type: String,
         required: true
     },
 
 
-    bloodGroup :{
-        type: String,
-        required: true
+    experienceInYears :{
+        type: Numbers,
+      default : 0
     },
 
-    gender :{
-
-    address :{
-        type: String,
-        enum : ["M",'F'],
-        required: true
-    },
-
-
-    admittedIn :{
+    worksInHospitals : [{
         type: mongoose.Schema.types.ObjectId,
-        ref: "Hospital",
-    },
-    }
+        ref: "Hospital"
+    }],
 }, {timestamps: true})
 export const Doctor = mongoose.model("Doctor", doctorSchema)
